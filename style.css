@@ -1,0 +1,419 @@
+/* ==========================================================================
+   1. CORE STYLE RESETS & ROOT CONSTANTS
+   ========================================================================== */
+:root {
+    --primary-blue: #007bff;
+    --dark-royal: #1e3a8a;
+    --light-bg: #f4f8fc;
+    --card-shadow: 0 4px 15px rgba(30, 58, 138, 0.08);
+    --border-color: #e2edf7;
+    --success-green: #28a745;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: #334155;
+    scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   2. NAVBAR COMPONENT
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 18px 6%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+}
+
+.nav-user .username {
+    font-weight: 700;
+    color: var(--dark-royal);
+    background: #e6f0fa;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* ==========================================================================
+   3. HERO BLOCK UI
+   ========================================================================== */
+.hero-block {
+    background: #ffffff;
+    padding: 60px 6%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.hero-content-left {
+    flex: 1;
+}
+
+.main-heading {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--dark-royal);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.highlight-text {
+    color: var(--primary-blue);
+}
+
+.sub-heading-text {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.cta-scroll-btn {
+    display: inline-block;
+    background: var(--primary-blue);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 28px;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 123, 255, 0.3);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.cta-scroll-btn:hover {
+    background: #0069d9;
+    transform: translateY(-2px);
+}
+
+.hero-media-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-display-img {
+    width: 100%;
+    max-width: 520px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* ==========================================================================
+   4. FULL WIDTH ACHIEVEMENTS BAND
+   ========================================================================== */
+.achievements-bar {
+    background: var(--primary-blue);
+    color: #ffffff;
+    padding: 35px 6%;
+}
+
+.metrics-wrapper {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.metric-node {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.counter-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.counter-label {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   5. WORKSPACE & DUAL COLUMN LAYOUT
+   ========================================================================== */
+.workspace-section {
+    padding: 70px 6%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.workspace-title {
+    font-size: 1.8rem;
+    color: var(--dark-royal);
+    margin-bottom: 35px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.split-flex-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.catalog-column-left {
+    flex: 1.1;
+}
+
+.checkout-column-right {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.column-header {
+    font-size: 1.2rem;
+    color: var(--dark-royal);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   6. DYNAMIC CARDS (HUMAN STYLE)
+   ========================================================================== */
+.services-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.laundry-item-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.2s;
+}
+
+.laundry-item-card:hover {
+    border-color: var(--primary-blue);
+}
+
+.card-meta h4 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.card-meta .price-tag {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.card-triggers {
+    display: flex;
+    gap: 10px;
+}
+
+.action-add-btn, .action-remove-btn {
+    padding: 10px 16px;
+    border: none;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.action-add-btn {
+    background: #e6f0fa;
+    color: var(--primary-blue);
+}
+
+.action-add-btn:hover {
+    background: var(--primary-blue);
+    color: #ffffff;
+}
+
+.action-remove-btn {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+.action-remove-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+/* Disabled state once item is loaded */
+.laundry-item-card.is-active .action-add-btn {
+    background: #dcfce7;
+    color: #15803d;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   7. CART SUMMARY & DISPATCH FORM
+   ========================================================================== */
+.cart-summary-card, .dispatch-form-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.empty-basket-alert {
+    text-align: center;
+    color: #94a3b8;
+    padding: 30px 0;
+}
+
+.empty-basket-alert i {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.cart-itemized-output {
+    list-style: none;
+}
+
+.basket-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-weight: 500;
+}
+
+.invoice-total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid var(--border-color);
+    font-weight: 800;
+    font-size: 1.15rem;
+}
+
+.invoice-total-row .total-value {
+    color: var(--primary-blue);
+}
+
+/* Forms layout */
+.custom-form-group {
+    margin-bottom: 18px;
+}
+
+.custom-form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.form-input-node {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.form-input-node:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.order-dispatch-btn {
+    width: 100%;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+    transition: background 0.2s;
+}
+
+.order-dispatch-btn:hover {
+    background: #0069d9;
+}
+
+/* Guidelines Feedback Zone */
+.hidden-feedback {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+}
+
+.hidden-feedback.success-state {
+    display: block;
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE CONTROLS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-container, .split-flex-layout {
+        flex-direction: column;
+    }
+    .hero-media-right {
+        justify-content: center;
+    }
+}

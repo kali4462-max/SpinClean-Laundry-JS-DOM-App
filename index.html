@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Services Web App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY_HERE");
+        })();
+    </script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">🧺 SpinClean</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#booking-app-core">Services</a></li>
+            <li><a href="#booking-app-core">Book Now</a></li>
+        </ul>
+        <div class="nav-user">
+            <span class="username">Suraj Jha</span>
+        </div>
+    </nav>
+
+    <div class="app-layout">
+
+        <header class="hero-block">
+            <div class="hero-container">
+                <div class="hero-content-left">
+                    <h1 class="main-heading">Revitalize Your Clothes with Expert <br><span class="highlight-text">Laundry Services!</span></h1>
+                    <p class="sub-heading-text">
+                        Get premium care for your daily wear. We handle stains, delicate fabrics, and iron loops with absolute perfection. Fresh clothes delivered straight to your doorstep.
+                    </p>
+                    <button class="cta-scroll-btn" onclick="scrollToBooking()">Book a Service Today</button>
+                </div>
+                <div class="hero-media-right">
+                    <img src="https://images.unsplash.com/photo-1545173168-9f1907e80021?w=600&auto=format&fit=crop&q=60" alt="Professional Washing Setup" class="hero-display-img">
+                </div>
+            </div>
+        </header>
+
+        <section class="achievements-bar">
+            <div class="metrics-wrapper">
+                <div class="metric-node">
+                    <span class="counter-number">15+</span>
+                    <span class="counter-label">Laundry Services</span>
+                </div>
+                <div class="metric-node">
+                    <span class="counter-number">243+</span>
+                    <span class="counter-label">Happy Customers</span>
+                </div>
+                <div class="metric-node">
+                    <span class="counter-number">2+</span>
+                    <span class="counter-label">Years of Experience</span>
+                </div>
+            </div>
+        </section>
+
+        <main id="booking-app-core" class="workspace-section">
+            <div class="container-fluid">
+                <h2 class="workspace-title">Select Services & Place Order</h2>
+                
+                <div class="split-flex-layout">
+                    
+                    <div class="catalog-column-left">
+                        <h3 class="column-header">Available Laundromat Options</h3>
+                        <div id="services-render-target" class="services-list-wrapper">
+                            </div>
+                    </div>
+
+                    <div class="checkout-column-right">
+                        
+                        <div class="cart-summary-card">
+                            <h3 class="column-header">Selected Service Summary</h3>
+                            <div id="cart-empty-placeholder" class="empty-basket-alert">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                                <p>Your basket is currently empty. Please add laundry nodes from the catalog.</p>
+                            </div>
+                            <ul id="active-cart-list" class="cart-itemized-output"></ul>
+                            <div class="invoice-total-row">
+                                <span class="total-title">Total Amount:</span>
+                                <span id="invoice-grand-total" class="total-value">₹0</span>
+                            </div>
+                        </div>
+
+                        <div class="dispatch-form-card">
+                            <h3 class="column-header">Confirm Schedule</h3>
+                            <form id="laundry-order-form" autocomplete="off">
+                                <div class="custom-form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" id="client-name" class="form-input-node" placeholder="e.g. Suraj Jha" required>
+                                </div>
+                                <div class="custom-form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" id="client-email" class="form-input-node" placeholder="suraj@example.com" required>
+                                </div>
+                                <div class="custom-form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" id="client-phone" class="form-input-node" placeholder="98765XXXXX" required>
+                                </div>
+                                <button type="submit" class="order-dispatch-btn">Book Now</button>
+                            </form>
+                            <div id="success-feedback-msg" class="hidden-feedback"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
